@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InputArea } from "./components/InputArea";
 import { WordContainer } from "./components/WordContainer";
 
 export const App = () => {
@@ -115,10 +116,8 @@ export const App = () => {
   };
   return (
     <>
-      <div>
-        <input type="text" onChange={matchJudgment} />
-      </div>
       <WordContainer wordList={wordList} />
+      <InputArea onChenge={matchJudgment} />
     </>
   );
 };

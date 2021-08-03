@@ -9,7 +9,7 @@ export const WordContainer = (props) => {
       {wordList.map((word, index) => {
         if (index === 0) {
           return <CurrentWordBox key={index}>{word}</CurrentWordBox>;
-        } else return <WordBox key={index}>{word}</WordBox>;
+        } else if (index <= 13) return <WordBox key={index}>{word}</WordBox>;
       })}
     </SWordContainer>
   );
@@ -18,6 +18,9 @@ export const WordContainer = (props) => {
 const SWordContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: skyblue;
+  background-color: whitesmoke;
   width: 600px;
+  padding: 10px;
+  margin: auto;
+  border-radius: 30px;
 `;

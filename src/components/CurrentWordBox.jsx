@@ -9,6 +9,8 @@ export const CurrentWordBox = (props) => {
 const SWordBox = styled.div`
   height: 42px;
   font-size: 25px;
-  padding: 4px;
+  padding: 4px 8px;
   margin: 2px;
+  background-color: red;
+  border-radius: 15px;
 `;
