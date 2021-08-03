@@ -11,10 +11,14 @@ export const InputArea = (props) => {
 };
 
 const SInput = styled.input`
-  width: 100%;
+  width: 550px;
+  margin: auto;
   padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 3px;
+  outline: none;
+  font-size: 25px;
+  border-radius: 15px;
   border: 2px solid #ddd; /*枠線*/
-  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  top: -70px;
 `;

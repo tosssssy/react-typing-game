@@ -7,7 +7,7 @@ export const WordBox = (props) => {
 };
 
 const SWordBox = styled.div`
-  height: 42px;
+  height: 45px;
   font-size: 25px;
   padding: 4px;
   margin: 2px;

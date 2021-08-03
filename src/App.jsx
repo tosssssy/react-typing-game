@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { InputArea } from "./components/InputArea";
 import { WordContainer } from "./components/WordContainer";
 
@@ -116,8 +117,16 @@ export const App = () => {
   };
   return (
     <>
-      <WordContainer wordList={wordList} />
-      <InputArea onChenge={matchJudgment} />
+      <SApp>
+        <WordContainer wordList={wordList} />
+        <InputArea onChange={matchJudgment} />
+      </SApp>
     </>
   );
 };
+
+const SApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+`;
