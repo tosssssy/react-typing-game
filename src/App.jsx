@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { InputArea } from "./components/InputArea";
 import { WordContainer } from "./components/WordContainer";
+import { numState } from "./numState";
 
 export const App = () => {
+  const currentNumF = useSetRecoilState(numState);
+
   const [wordList, setWordList] = useState([
     "asd",
     "translucent",
@@ -108,11 +112,22 @@ export const App = () => {
     "vacuum"
   ]);
 
+  let counter = 0;
   const matchJudgment = (e) => {
-    if (e.target.value === wordList[0]) {
+    const judgeWord = e.target.value;
+    counter = 0;
+
+    if (judgeWord === wordList[0]) {
       e.target.value = "";
       const newList = [...wordList];
       setWordList(newList.slice(1, wordList.length));
+    } else {
+      for (let i = 0; i < wordList[0].length; i++) {
+        if (judgeWord[i] === undefined || wordList[0][i] !== judgeWord[i]) {
+          currentNumF(counter);
+        }
+        counter += 1;
+      }
     }
   };
   return (

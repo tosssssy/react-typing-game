@@ -3,7 +3,11 @@ import styled from "styled-components";
 export const WordBox = (props) => {
   const { children } = props;
 
-  return <SWordBox>{children}</SWordBox>;
+  return (
+    <>
+      <SWordBox>{children}</SWordBox>
+    </>
+  );
 };
 
 const SWordBox = styled.div`

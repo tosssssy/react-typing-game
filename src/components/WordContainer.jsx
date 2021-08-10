@@ -1,8 +1,9 @@
+import { memo } from "react";
 import styled from "styled-components";
 import { CurrentWordBox } from "./CurrentWordBox";
 import { WordBox } from "./WordBox";
 
-export const WordContainer = (props) => {
+export const WordContainer = memo((props) => {
   const { wordList } = props;
   return (
     <SWordContainer>
@@ -13,7 +14,7 @@ export const WordContainer = (props) => {
       })}
     </SWordContainer>
   );
-};
+});
 
 const SWordContainer = styled.div`
   display: flex;
