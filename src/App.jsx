@@ -3,10 +3,10 @@ import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { InputArea } from "./components/InputArea";
 import { WordContainer } from "./components/WordContainer";
-import { numState } from "./numState";
+import { useNumState } from "./useNumState";
 
 export const App = () => {
-  const currentNumF = useSetRecoilState(numState);
+  const currentNumF = useSetRecoilState(useNumState);
 
   const [wordList, setWordList] = useState([
     "asd",
@@ -116,6 +116,7 @@ export const App = () => {
   const matchJudgment = (e) => {
     const judgeWord = e.target.value;
     counter = 0;
+    currentNumF(0);
 
     if (judgeWord === wordList[0]) {
       e.target.value = "";
@@ -124,12 +125,13 @@ export const App = () => {
     } else {
       for (let i = 0; i < wordList[0].length; i++) {
         if (judgeWord[i] === undefined || wordList[0][i] !== judgeWord[i]) {
-          currentNumF(counter);
+          return currentNumF(counter);
         }
         counter += 1;
       }
     }
   };
+
   return (
     <>
       <SApp>
