@@ -1,23 +1,19 @@
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { numState } from "../numState";
+import { useNumState } from "../useNumState";
 
 export const CurrentWordBox = (props) => {
   const { children = "" } = props;
-  const num = useRecoilValue(numState);
-  console.log(num);
+  const num = useRecoilValue(useNumState);
   const head = children.substr(0, num);
   const tail = children.substr(num, children.length);
+
   return (
     <SWordBox>
-      <div stylename={"inline-flex"}>
-        {console.log(`head=${head}`)}
-        {console.log(`tail=${tail}`)}
-
-        <div>{children}</div>
-        {/* <Shead>{head}</Shead>
-        <Stail>{tail}</Stail> */}
-      </div>
+      <SDiv>
+        <Shead>{head}</Shead>
+        <Stail>{tail}</Stail>
+      </SDiv>
     </SWordBox>
   );
 };
@@ -37,4 +33,8 @@ const Shead = styled.div`
 
 const Stail = styled.div`
   color: black;
+`;
+
+const SDiv = styled.div`
+  display: flex;
 `;
