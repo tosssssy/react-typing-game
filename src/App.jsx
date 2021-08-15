@@ -90,7 +90,6 @@ export const App = () => {
     "unshakeable",
     "unsoundness",
     "unwittingly",
-    "up to a point",
     "upcoming",
     "uperfluous",
     "uphold",
